@@ -26,7 +26,7 @@ steps:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/my-sample.zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/my-sample-1.zip'
 
 - task: PublishPipelineArtifact@1
   inputs:
