@@ -24,7 +24,13 @@ steps:
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
-    includeRootFolder: true
+    includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
+    archiveFile: '$(Build.ArtifactStagingDirectory)/my-sample.zip'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)'
+    artifact: 'sample-artifact'
+    publishLocation: 'pipeline'
+
